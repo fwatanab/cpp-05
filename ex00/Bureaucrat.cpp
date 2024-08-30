@@ -7,7 +7,7 @@ Bureaucrat::Bureaucrat(std::string const& name, int grade) : name(name) {
 		if (grade < 1)
 			throw Bureaucrat::GradeTooHighException(); // エラー処理
 		else if (grade > 150)
-			throw Bureaucrat::GradeTooHighException(); // エラー処理
+			throw Bureaucrat::GradeTooLowException(); // エラー処理
 		this->grade = grade;
 	}
 	catch (const Bureaucrat::GradeTooHighException& e) {
@@ -24,7 +24,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 	if (this != &other) {
-		name = other.name;
 		grade = other.grade;
 	}
 	return *this;
