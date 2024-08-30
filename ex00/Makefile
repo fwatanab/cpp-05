@@ -1,6 +1,6 @@
-NAME = Mom
+NAME = Bureaucrat_simulator
 
-SRC = main.cpp
+SRC = main.cpp Bureaucrat.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
